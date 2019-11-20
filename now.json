@@ -1,9 +1,8 @@
 {
     "version": 2,
     "builds": [
-        {"src": "/src/api/auth.js", "use": "@now/node"},
-        {"src": "/src/api/contacts.js", "use": "@now/node"},
-        {"src": "/src/api/users.js", "use": "@now/node"}
+        {"src": "/server.js", "use": "@now/node"}
+
     ],
     "routes":[
         {
