@@ -37,6 +37,7 @@ router.post('/',
                 return res.status(400).json({ msg: 'User already exists' })
             }
 
+            // create new User object
             user = new User({
                 name,
                 email,
