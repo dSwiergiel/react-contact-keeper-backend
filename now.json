@@ -4,18 +4,13 @@
         {"src": "/server.js", "use": "@now/node-server"}
 
     ],
-    "routes":[
-        {
-            "src":"/auth/(.*)",
-            "dest":"/src/api/auth.js"
+    "routes": [{
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
         },
-        {
-            "src":"/contacts/(.*)",
-            "dest":"/src/api/contacts.js"
-        },
-        {
-            "src":"/users/(.*)",
-            "dest":"/src/api/users.js"
-        }
-    ]
+        "src": "/.*",
+        "dest": "/server.js"
+    }]
 }
