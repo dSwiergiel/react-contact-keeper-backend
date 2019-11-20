@@ -1,11 +1,22 @@
 {
     "version": 2,
-    "builds": [{"src": "server.js", "use": "@now/node-server"}],
+    "builds": [
+        {"src": "/src/api/auth.js", "use": "@now/node"},
+        {"src": "/src/api/contacts.js", "use": "@now/node"},
+        {"src": "/src/api/users.js", "use": "@now/node"}
+    ],
     "routes":[
         {
-            "src":"/",
-            "dest":"/server.js",
-            "methods":["GET"]
+            "src":"/auth/(.*)",
+            "dest":"/src/api/auth.js"
+        },
+        {
+            "src":"/contacts/(.*)",
+            "dest":"/src/api/contacts.js"
+        },
+        {
+            "src":"/users/(.*)",
+            "dest":"/src/api/users.js"
         }
     ]
 }

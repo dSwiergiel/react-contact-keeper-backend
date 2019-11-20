@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const connectDB = require('./config/db.js');
+const http = require('http');
 
 // Connnect Database
 connectDB();
@@ -19,6 +20,9 @@ app.use('/api/users', require('./api/users'));
 app.use('/api/auth', require('./api/auth'));
 app.use('/api/contacts', require('./api/contacts'));
 
-app.listen(PORT, () =>
-  console.log(`Server running at: http://localhost:${PORT}`)
-);
+const server = http.createServer(app);
+server.listen(PORT);
+
+// app.listen(PORT, () =>
+//   console.log(`Server running at: http://localhost:${PORT}`)
+// );
