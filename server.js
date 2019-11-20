@@ -3,7 +3,7 @@ const app = express();
 const connectDB = require('./config/db.js');
 const http = require('http');
 
-// Connnect Database
+// Connect Database
 connectDB();
 
 // Init Middleware
@@ -15,7 +15,7 @@ app.get('/', (req, res) =>
   res.json({ msg: 'Welcome to the ContactKeeper API' })
 );
 
-// seperated endpoints to their respsctive files and using routes to handle
+// separated endpoints to their respective files and using routes to handle
 app.use('/api/users', require('./api/users'));
 app.use('/api/auth', require('./api/auth'));
 app.use('/api/contacts', require('./api/contacts'));
