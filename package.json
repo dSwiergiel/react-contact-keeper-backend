@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/dSwiergiel/react-contact-keeper-backend/issues"
   },
-  "homepage": "https://github.com/dSwiergiel/react-contact-keeper-backend#readme",
+  "homepage": ".",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.2.4",
