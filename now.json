@@ -1,9 +1,10 @@
 {
     "version": 2,
-    "builds": [
-        {"src": "/server.js", "use": "@now/node-server"}
-
-    ],
+    "name": "express-now",
+    "builds": [{
+        "src": "server.js",
+        "use": "@now/node-server"
+    }],
     "routes": [{
         "headers": {
             "Access-Control-Allow-Origin": "*",
@@ -12,5 +13,8 @@
         },
         "src": "/.*",
         "dest": "/server.js"
-    }]
+    }],
+    "env": {
+        "TEST_ENV_VARIABLE": "@test_env_var"
+    }
 }

@@ -20,9 +20,10 @@ app.use('/api/users', require('./api/users'));
 app.use('/api/auth', require('./api/auth'));
 app.use('/api/contacts', require('./api/contacts'));
 
-const server = http.createServer(app);
-server.listen(PORT);
-
-// app.listen(PORT, () =>
+// const server = http.createServer(app);
+// server.listen(PORT, () =>
 //   console.log(`Server running at: http://localhost:${PORT}`)
 // );
+app.listen(PORT, () =>
+  console.log(`Server running at: http://localhost:${PORT}`)
+);
