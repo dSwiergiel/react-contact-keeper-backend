@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-const config = require('config');
+// const config = require('config');
+const config = require('../config/configuration');
 
 /* 
     Middleware that is to be called for all protected routes
@@ -17,7 +18,7 @@ module.exports = function (req, res, next) {
     }
 
     try {
-        const decoded = jwt.verify(token, config.get('jwtSecret'));
+        const decoded = jwt.verify(token, config.jwtSecret);
 
         req.user = decoded.user;
         next();

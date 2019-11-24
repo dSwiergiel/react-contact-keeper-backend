@@ -1,20 +1,40 @@
 {
-    "version": 2,
-    "name": "express-now",
-    "builds": [{
-        "src": "server.js",
-        "use": "@now/node-server"
-    }],
-    "routes": [{
-        "headers": {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
-        },
-        "src": "/.*",
-        "dest": "/server.js"
-    }],
-    "env": {
-        "TEST_ENV_VARIABLE": "@test_env_var"
+  "version": 2,
+  "name": "express-now",
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@now/node"
     }
+  ],
+  "routes": [
+    {
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+      },
+      "src": "/.*",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/api/auth",
+      "dest": "/server.js",
+      "methods": ["POST", "GET"]
+    },
+    {
+        "src": "/api/contacts",
+        "dest": "/server.js",
+        "methods": ["POST", "GET", "PUT", "DELETE"]
+      },
+      {
+        "src": "/api/users",
+        "dest": "/server.js",
+        "methods": ["POST", "GET"]
+      }
+  ],
+  "env": {
+    "JWT_SECRET": "@jwt_secret",
+    "MONGO_URI": "@mongo_uri"
+  }
 }
