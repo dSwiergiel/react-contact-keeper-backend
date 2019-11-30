@@ -36,7 +36,8 @@ router.post(
 
     try {
       // check if user with that email already exists in db
-      let user = await User.findOne({ email });
+      let emailLowerCase = email.toLowerCase();
+      let user = await User.findOne({ email: emailLowerCase });
       if (user) {
         return res.status(400).json({ msg: 'User already exists' });
       }
@@ -44,7 +45,7 @@ router.post(
       // create new User object
       user = new User({
         name,
-        email,
+        email: emailLowerCase,
         password
       });
 
