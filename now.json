@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "express-now",
+  "name": "react-contact-keeper-backend",
   "builds": [
     {
       "src": "server.js",
@@ -12,7 +12,7 @@
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, x-auth-token, X-Auth-Token, Accept"
+        "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, x-auth-token, X-Auth-Token, Accept, context-type"
       },
       "src": "/.*",
       "dest": "/server.js"
